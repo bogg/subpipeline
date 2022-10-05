@@ -6,6 +6,8 @@ spec:
   params:
     - name: cluster
       description: the cluster
+    - name: anothervalue
+      description: the valu
   workspaces:
   - name: task-pvc
     mountPath: /artifacts
@@ -16,10 +18,13 @@ spec:
       env:
         - name: CLUSTER
           value: $(params.cluster)
+        - name: ANOTHERV
+          value: $(params.anothervalu)
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
           echo "Deploying to $CLUSTER";
+          echo "Oh, and $ANOTHERV";
           sleep 2s;
           echo "Small Pause!";
           sleep 1s;

@@ -6,7 +6,7 @@ spec:
   params:
     - name: cluster
       description: the cluster
-    - name: anothervalue
+    - name: anothervalu
       description: the valu
   workspaces:
   - name: task-pvc

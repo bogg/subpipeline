@@ -6,6 +6,8 @@ spec:
   params:
     - name: cluster
       description: the cluster to deploy to
+    - name: anothervalu
+      description: another val
   workspaces:
   - name: pipeline-pvc
   tasks:  
@@ -16,6 +18,8 @@ spec:
       params:
         - name: cluster
           value: $(params.cluster)
+        - name: anothervalu
+          value: $(params.anothervalu)
       workspaces:
       - name: task-pvc
         workspace: pipeline-pvc  

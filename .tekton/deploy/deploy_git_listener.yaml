@@ -42,7 +42,7 @@ metadata:
 spec:
   params:
     - name: cluster
-      value: $(event.commit_sha)
+      value: $(event.head_commit.id)
 ---
 apiVersion: tekton.dev/v1beta1
 kind: EventListener

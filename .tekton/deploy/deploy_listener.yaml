@@ -31,9 +31,9 @@ spec:
               claimName: pipelinerun-$(uid)-pvc
         params:
         - name: cluster
-          value: $(tt.params.cluster)
+          value: $(params.cluster)
         - name: anothervalu
-          value: $(tt.params.anothervalu)
+          value: $(params.anothervalu)
 ---
 apiVersion: tekton.dev/v1beta1
 kind: TriggerBinding

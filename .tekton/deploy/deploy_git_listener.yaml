@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: TriggerTemplate
 metadata:
-  name: template
+  name: git-template
 spec:
   params:
     - name: cluster
@@ -38,7 +38,7 @@ spec:
 apiVersion: tekton.dev/v1beta1
 kind: TriggerBinding
 metadata:
-  name: binding
+  name: git-binding
 spec:
   params:
     - name: cluster
@@ -47,10 +47,10 @@ spec:
 apiVersion: tekton.dev/v1beta1
 kind: EventListener
 metadata:
-  name: deploy-listener
+  name: git-deploy-listener
 spec:
   triggers:
     - binding:
-        name: binding
+        name: git-binding
       template:
-        name: template
+        name: git-template

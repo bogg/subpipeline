@@ -50,7 +50,7 @@ metadata:
   name: git-deploy-listener
 spec:
   triggers:
-    - binding:
+    - bindings:
         name: git-binding
       template:
         name: git-template

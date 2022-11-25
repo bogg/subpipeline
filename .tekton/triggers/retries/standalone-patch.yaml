@@ -1,0 +1,8 @@
+## CDPipelineRun patch file (overlay): [Retries] : retries/standalone.yaml
+apiVersion: devops.cloud.ibm.com/v1alpha1
+kind: CDPipelineRun
+metadata:
+  name: subpipes-deploy
+spec:
+  eventListener: manual-retries-listener
+  eventPayload: '{}'

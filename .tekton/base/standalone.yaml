@@ -1,0 +1,13 @@
+## Tekton CRD: standalone.yaml:
+
+apiVersion: devops.cloud.ibm.com/v1alpha1
+kind: CDPipelineRun
+metadata:
+  name: subpipes-deploy
+spec:
+  secretStores: []
+  pipelineDefinitions:
+    - repoURL: 'https://github.com/bogg/subpipeline.git'
+      repoBranch: master
+      repoPath: .tekton/deploy
+      repoType: GitHub

@@ -1,0 +1,8 @@
+## CDPipelineRun patch file (overlay): [Deploy] : deploy/standalone.yaml
+apiVersion: devops.cloud.ibm.com/v1alpha1
+kind: CDPipelineRun
+metadata:
+  name: subpipes-deploy
+spec:
+  eventListener: deploy-listener
+  eventPayload: '{}'

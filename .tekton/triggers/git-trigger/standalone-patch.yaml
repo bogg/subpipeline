@@ -1,0 +1,8 @@
+## CDPipelineRun patch file (overlay): [Git Trigger] : git-trigger/standalone.yaml
+apiVersion: devops.cloud.ibm.com/v1alpha1
+kind: CDPipelineRun
+metadata:
+  name: subpipes-deploy
+spec:
+  eventListener: git-deploy-listener
+  eventPayload: '{}'

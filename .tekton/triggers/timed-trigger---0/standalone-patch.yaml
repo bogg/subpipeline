@@ -1,0 +1,8 @@
+## CDPipelineRun patch file (overlay): [Timed Trigger - 0] : timed-trigger---0/standalone.yaml
+apiVersion: devops.cloud.ibm.com/v1alpha1
+kind: CDPipelineRun
+metadata:
+  name: subpipes-deploy
+spec:
+  eventListener: deploy-listener
+  eventPayload: '{}'

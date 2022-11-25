@@ -1,0 +1,56 @@
+apiVersion: tekton.dev/v1beta1
+kind: TriggerTemplate
+metadata:
+  name: git-template
+spec:
+  params:
+    - name: cluster
+      description: the cluster
+  resourcetemplates:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: pipelinerun-$(uid)-pvc
+      spec:
+        resources:
+          requests:
+            storage:  5Gi
+        volumeMode: Filesystem
+        accessModes:
+          - ReadWriteOnce
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        name: pipelinerun-$(uid)
+      spec:
+        pipelineRef:
+            name: deploy-pipeline
+        workspaces:
+          - name: pipeline-pvc
+            persistentVolumeClaim:
+              claimName: pipelinerun-$(uid)-pvc
+        params:
+        - name: cluster
+          value: $(params.cluster)
+        - name: anothervalu
+          value: $(params.anothervalu)
+---
+apiVersion: tekton.dev/v1beta1
+kind: TriggerBinding
+metadata:
+  name: git-binding
+spec:
+  params:
+    - name: cluster
+      value: $(event.head_commit.id)
+---
+apiVersion: tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  name: git-deploy-listener
+spec:
+  triggers:
+   - bindings:
+      - name: git-binding
+     template:
+       name: git-template

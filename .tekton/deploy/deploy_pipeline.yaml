@@ -8,6 +8,8 @@ spec:
       description: the cluster to deploy to
     - name: anothervalu
       description: another val
+    - name: localrun_aes_key
+      description: localrun_aes_key
   workspaces:
   - name: pipeline-pvc
   tasks:  

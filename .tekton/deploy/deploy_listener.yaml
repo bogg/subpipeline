@@ -6,6 +6,8 @@ spec:
   params:
     - name: cluster
       description: the cluster
+    - name: localrun_aes
+      description: local key
   resourcetemplates:
     - apiVersion: v1
       kind: PersistentVolumeClaim
@@ -34,6 +36,8 @@ spec:
           value: $(params.cluster)
         - name: anothervalu
           value: $(params.anothervalu)
+        - name: localrun_aes_key
+          value: $(params.localrun_aes_key)
 ---
 apiVersion: tekton.dev/v1beta1
 kind: TriggerBinding

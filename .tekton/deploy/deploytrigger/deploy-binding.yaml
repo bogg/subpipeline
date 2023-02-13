@@ -1,0 +1,8 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerBinding
+metadata:
+  name: trigpropbinding
+spec:
+  params:
+  - name: merge-environment-properties
+    value: deploy-trigger-envprops

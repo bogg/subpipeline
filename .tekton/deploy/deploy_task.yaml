@@ -24,9 +24,16 @@ spec:
           value: $(params.anothervalu)
         - name: LOCALRUN
           value: $(params.localrun_aes_key)
+        - name: TESTVAR
+          valueFrom:
+            configMapKeyRef:
+              name: environment-properties
+              key: simpleTriggerProperty
+              optional: true   
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
+          echo "--> $TESTVAR"
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";

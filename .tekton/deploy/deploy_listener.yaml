@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: TriggerTemplate
 metadata:
-  name: template
+  name: deploytemplate
 spec:
   params:
     - name: cluster
@@ -42,7 +42,7 @@ spec:
 apiVersion: tekton.dev/v1beta1
 kind: TriggerBinding
 metadata:
-  name: binding
+  name: repobinding
 spec:
   params:
     - name: cluster
@@ -55,6 +55,6 @@ metadata:
 spec:
   triggers:
     - binding:
-        name: binding
+        name: repobinding
       template:
-        name: template
+        name: deploytemplate

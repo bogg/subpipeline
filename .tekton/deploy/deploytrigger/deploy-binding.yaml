@@ -6,3 +6,5 @@ spec:
   params:
   - name: merge-environment-properties
     value: deploy-trigger-envprops
+  - name: merge-secure-properties
+    value: deploy-trigger-secret

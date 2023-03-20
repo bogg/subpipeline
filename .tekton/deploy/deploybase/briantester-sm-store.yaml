@@ -1,0 +1,17 @@
+## External Secret Definition (base): base/kustomization.yaml
+# See Kustomize reference for guides and examples
+# https://kubectl.docs.kubernetes.io/references/kustomize/
+
+apiVersion: external-secrets.io/v1beta1
+kind: SecretStore
+metadata:
+  name: briantester-sm
+spec:
+  provider:
+    ibm:
+      serviceUrl: >-
+        https://ee613530-63b0-4c8a-8a26-b97b98b278ac.eu-gb.secrets-manager.test.appdomain.cloud
+      secretRef:
+        secretApiKeySecretRef:
+          name: secure-properties
+          key: briantester-sm-dev-iam-apikey

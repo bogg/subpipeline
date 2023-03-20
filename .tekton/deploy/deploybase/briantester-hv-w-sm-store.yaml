@@ -1,0 +1,18 @@
+## External Secret Definition (base): base/kustomization.yaml
+# See Kustomize reference for guides and examples
+# https://kubectl.docs.kubernetes.io/references/kustomize/
+
+apiVersion: external-secrets.io/v1beta1
+kind: SecretStore
+metadata:
+  name: briantester-hv-w-sm
+spec:
+  provider:
+    vault:
+      server: 'https://vserv-test.sos.ibm.com:8200'
+      path: ''
+      version: v1
+      auth:
+        appRole:
+          path: approle
+          roleId: approle

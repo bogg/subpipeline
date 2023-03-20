@@ -9,10 +9,12 @@ commonLabels:
 generatorOptions:
   disableNameSuffixHash: true
 resources:
-# external secrets
-  - briantesterhvsecret.yaml
-  - briantesterhvstore.yaml
+  - briantester-hv-store.yaml
+  - briantester-hv-secret.yaml
+  - briantester-sm-store.yaml
+  - briantester-sm-secret.yaml
+  - briantester-hv-w-sm-store.yaml
 configMapGenerator:
-  - name: deploy-trigger-envprops
+  - name: environment-properties
     envs:
-      - deploytrigger-envprops.env
+      - environment-properties.env

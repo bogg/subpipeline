@@ -11,9 +11,9 @@ generatorOptions:
 resources:
   - briantester-hv-store.yaml
   - briantester-hv-secret.yaml
-  - briantester-sm-store.yaml
-  - briantester-sm-secret.yaml
-  - briantester-hv-w-sm-store.yaml
+  # - briantester-sm-store.yaml
+  # - briantester-sm-secret.yaml
+  # - briantester-hv-w-sm-store.yaml
 configMapGenerator:
   - name: environment-properties
     envs:

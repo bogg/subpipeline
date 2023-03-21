@@ -10,7 +10,7 @@ generatorOptions:
   disableNameSuffixHash: true
 resources:
 # external secrets
-  - briantesterhvsecret.yaml
+  # - briantesterhvsecret.yaml
 configMapGenerator:
   - name: deploy-trigger-envprops
     envs:

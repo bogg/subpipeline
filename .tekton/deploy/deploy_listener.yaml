@@ -20,7 +20,7 @@ spec:
           - name: pipeline-pvc
             volumeClaimTemplate:
               spec:
-                volumeName: pv-vol1
+                storageClass: ibmc-vpc-block-10iops-tier
         params:
         - name: cluster
           value: $(params.cluster)

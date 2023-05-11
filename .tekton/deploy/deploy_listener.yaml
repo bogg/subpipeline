@@ -21,6 +21,7 @@ spec:
             volumeClaimTemplate:
               spec:
                 storageClassName: "ibmc-vpc-block-10iops-tier" 
+                volumeName: "pv-vol1" 
                 accessModes:
                   - ReadWriteOnce
                 resources:

@@ -9,17 +9,6 @@ spec:
     - name: localrun_aes
       description: local key
   resourcetemplates:
-    - apiVersion: v1
-      kind: PersistentVolumeClaim
-      metadata:
-        name: pipelinerun-$(uid)-pvc
-      spec:
-        resources:
-          requests:
-            storage:  5Gi
-        volumeMode: Filesystem
-        accessModes:
-          - ReadWriteOnce
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
       metadata:
@@ -29,8 +18,13 @@ spec:
             name: deploy-pipeline
         workspaces:
           - name: pipeline-pvc
-            persistentVolumeClaim:
-              claimName: pipelinerun-$(uid)-pvc
+            volumeClaimTemplate:
+              spec:
+                accessModes:
+                  - ReadWriteOnce
+                resources:
+                  requests:
+                    storage: 5Gi
         params:
         - name: cluster
           value: $(params.cluster)

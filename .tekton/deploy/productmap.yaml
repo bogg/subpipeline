@@ -1,0 +1,12 @@
+---
+github:
+  - name: github.ibm.com
+    org:
+      - name: dreadnought
+        repos:
+          - name: dreadnought-epx-module
+            catalog_id: d56522f9-ed94-4e05-ac69-b8f81eb4431c
+            products:
+              - name: dreadnought-runtime
+                offering_id: 6bc38335-02a4-4dd6-b30a-3222aaa93df7
+                mark_ready: true

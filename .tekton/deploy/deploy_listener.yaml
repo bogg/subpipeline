@@ -20,6 +20,7 @@ spec:
           - name: pipeline-pvc
             volumeClaimTemplate:
               spec:
+                storageClassName: "ibmc-vpc-block-10iops-tier" 
                 accessModes:
                   - ReadWriteOnce
                 resources:

@@ -18,7 +18,7 @@ spec:
         resources:
           requests:
             storage:  5Gi
-        volumeMode: Filesystem
+#         volumeMode: Filesystem
         accessModes:
           - ReadWriteOnce
     - apiVersion: tekton.dev/v1beta1

@@ -21,6 +21,8 @@ spec:
             volumeClaimTemplate:
               spec:
                 storageClassName: ibmc-vpc-block-10iops-tier
+                accessModes:
+                  - ReadWriteOnce
         params:
         - name: cluster
           value: $(params.cluster)

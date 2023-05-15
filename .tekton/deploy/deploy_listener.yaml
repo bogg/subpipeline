@@ -14,7 +14,6 @@ spec:
       metadata:
         name: pipelinerun-$(uid)-pvc
       spec:
-        storageClassName: ibmc-vpc-block-10iops-tier 
         resources:
           requests:
             storage:  5Gi

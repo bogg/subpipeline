@@ -2,6 +2,8 @@ apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: deploy-with-kubectl
+  labels:
+    runtimeClassName: kata-tiny
 spec:
   params:
     - name: cluster

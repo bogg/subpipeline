@@ -32,7 +32,7 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          sleep 10s;
+          sleep 60s;
           echo "Small Pause!";
           sleep 3s;
           echo "Done!";

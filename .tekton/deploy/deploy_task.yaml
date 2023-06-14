@@ -3,7 +3,7 @@ kind: Task
 metadata:
   name: deploy-with-kubectl
   labels:
-    runtimeClassName: kata-large
+    runtimeClassName: kata-tiny
 spec:
   params:
     - name: cluster

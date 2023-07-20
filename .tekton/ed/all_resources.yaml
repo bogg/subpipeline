@@ -1,0 +1,45 @@
+apiVersion: tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  name: the-listener-manual
+spec:
+  triggers:
+  - binding:
+      name: git-pipeline-binding
+    template:
+      name: git-pipeline-template
+---
+apiVersion: tekton.dev/v1beta1
+kind: TriggerBinding
+metadata:
+  name: git-pipeline-binding
+---
+apiVersion: tekton.dev/v1beta1
+kind: TriggerTemplate
+metadata:
+  name: git-pipeline-template
+spec:
+  resourcetemplates:
+  - apiVersion: tekton.dev/v1beta1
+    kind: PipelineRun
+    metadata:
+      name: pipelinerun-$(uid)
+    spec:
+      pipelineRef:
+        name: clone-repo-pipeline
+      workspace:
+      - name: shared-data
+        emptyDir: {}
+---
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: clone-repo-pipeline
+spec:
+  tasks:
+    - name: clone-repo-task
+      taskRef:
+        name: git-clone-task
+      params:
+        - name: sshKeySecret
+          value: git-ssh-key

@@ -6,8 +6,6 @@ spec:
   params:
     - name: cluster
       description: the cluster
-    - name: localrun_aes_key
-      description: local key
   resourcetemplates:
     - apiVersion: v1
       kind: PersistentVolumeClaim

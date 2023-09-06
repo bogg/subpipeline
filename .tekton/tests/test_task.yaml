@@ -100,10 +100,14 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
-          for i in {0..50};
+          for i in {0..5};
           do
             echo "Running API tests...";
             env;
+            ls;
+            cd /artifacts;
+            ls;
+            touch i;
             sleep 3s;
             echo "done $i!";
             echo "----";
@@ -137,6 +141,9 @@ spec:
         - set -e -o pipefail;
           echo "Clean up tests";
           sleep 2s;
+          ls;
+          cd /artifacts;
+          ls;
           echo $REPOSITORY;
           echo $REVISION;
           echo "done!"

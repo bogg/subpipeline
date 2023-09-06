@@ -107,7 +107,7 @@ spec:
             ls;
             cd /artifacts;
             ls;
-            touch i;
+            touch $i;
             sleep 3s;
             echo "done $i!";
             echo "----";
@@ -142,8 +142,11 @@ spec:
           echo "Clean up tests";
           sleep 2s;
           ls;
+          echo "Switch";
           cd /artifacts;
+          echo ">>>>>>";
           ls;
+          echo "<<<<<<";
           echo $REPOSITORY;
           echo $REVISION;
           echo "done!"

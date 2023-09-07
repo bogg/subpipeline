@@ -103,7 +103,7 @@ spec:
           cd /artifacts;
           cat << EOF > brightup.sh
           #!/bin/sh
-          - echo "hi there!"
+echo "hi there!"
           EOF
           for i in {0..5};
           do

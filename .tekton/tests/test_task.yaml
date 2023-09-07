@@ -104,15 +104,17 @@ spec:
           do
             echo "Running API tests...";
             env;
-            ls;
-            cd /artifacts;
-            ls;
-            touch $i;
             sleep 3s;
             echo "done $i!";
             echo "----";
             echo "";
           done
+          cd /artifacts;
+          cat <<EOF >>brightup.sh
+          #!/bin/sh
+          echo "Hi there"
+          EOF
+
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task
@@ -141,11 +143,12 @@ spec:
         - set -e -o pipefail;
           echo "Clean up tests";
           sleep 2s;
-          ls;
           echo "Switch";
           cd /artifacts;
           echo ">>>>>>";
           ls;
+          chmod +x brightup.sh;
+          ./brightup.sh;
           echo "<<<<<<";
           echo $REPOSITORY;
           echo $REVISION;

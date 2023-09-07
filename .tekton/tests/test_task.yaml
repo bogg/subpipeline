@@ -100,6 +100,11 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
+          cd /artifacts;
+          cat << EOF > brightup.sh
+          #!/bin/sh
+          echo "hi there!"
+          EOF
           for i in {0..5};
           do
             echo "Running API tests...";
@@ -109,11 +114,6 @@ spec:
             echo "----";
             echo "";
           done
-          cd /artifacts;
-          cat << EOF > brightup.sh
-          #!/bin/sh
-          echo "hi there!"
-          EOF
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task

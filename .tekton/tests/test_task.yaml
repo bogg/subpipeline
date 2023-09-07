@@ -99,7 +99,8 @@ spec:
       image: thebog/privatebog:alpine
       command: ["/bin/bash", "-c"]
       args:
-        - set -e -o pipefail;
+        - |
+          set -e -o pipefail;
           for i in {0..5};
           do
             echo "Running API tests...";
@@ -112,7 +113,7 @@ spec:
           cd /artifacts;
           cat << EOF > brightup.sh
           #!/bin/sh
-echo "hi there!"
+          echo "hi there!"
           EOF
 ---
 apiVersion: tekton.dev/v1beta1

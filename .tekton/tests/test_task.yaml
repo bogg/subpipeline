@@ -112,9 +112,8 @@ spec:
           cd /artifacts;
           cat << EOF > brightup.sh
               #!/bin/sh
-              echo "hi there!"
+              echo "hi there!";
           EOF
-
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task

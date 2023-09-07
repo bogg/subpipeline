@@ -110,9 +110,8 @@ spec:
             echo "";
           done
           cd /artifacts;
-          cat <<EOF >>brightup.sh
+          cat << EOF >> brightup.sh
           #!/bin/sh
-           echo "Hi there";
           EOF
 
 ---

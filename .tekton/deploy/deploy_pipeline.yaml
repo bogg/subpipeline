@@ -19,6 +19,8 @@ spec:
       params:
         - name: cluster
           value: $(params.cluster)
+        - name: branch
+          value: $(params.branch)
         - name: anothervalu
           value: $(params.anothervalu)
         - name: localrun_aes_key

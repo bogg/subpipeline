@@ -18,7 +18,7 @@ spec:
       image: thebog/privatebog:alpine
       imagePullPolicy: Always
       env:
-        - name: CLUSTER
+          - name: CLUSTER
           value: $(params.cluster)
         - name: ANOTHERV
           value: $(params.anothervalu)

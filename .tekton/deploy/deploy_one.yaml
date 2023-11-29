@@ -1,0 +1,45 @@
+apiVersion: tekton.dev/v1beta1
+kind: TriggerTemplate
+metadata:
+  name: caseone
+spec:
+  params:
+    - name: cluster
+      description: the cluster
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        name: pipelinerun-$(uid)
+      spec:
+        pipelineRef:
+            name: deploy-pipeline
+        workspaces:
+          - name: pipeline-pvc
+        params:
+        - name: cluster
+          value: $(params.cluster)
+        - name: anothervalu
+          value: $(params.anothervalu)
+        - name: localrun_aes_key
+          value: $(params.localrun_aes_key)
+---
+apiVersion: tekton.dev/v1beta1
+kind: TriggerBinding
+metadata:
+  name: binding
+spec:
+  params:
+    - name: cluster
+      value: "bog-cluster"
+---
+apiVersion: tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  name: deploy-listener
+spec:
+  triggers:
+    - binding:
+        name: binding
+      template:
+        name: caseone

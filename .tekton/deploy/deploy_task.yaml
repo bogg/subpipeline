@@ -32,4 +32,7 @@ spec:
           echo "Oh and $ANOTHERV";
           apt update;
           apt install -y git;
-          git clone https://github.com/bogg/subpipeline.git;
+          git clone -b biglog https://github.com/bogg/subpipeline.git;
+          cd subpipeline;
+          cd .tekton;
+          cat secondrun.txt;

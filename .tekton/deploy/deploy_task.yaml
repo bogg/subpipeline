@@ -30,12 +30,4 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          sleep 2s;
-          echo "Small Pause!";
-          sleep 3s;
-          echo "Done!";
-          for i in {1..2} ; do
-          echo "Round $i";
-          ls;
-          sleep 5s;
-          done
+          git clone https://github.com/bogg/subpipeline.git

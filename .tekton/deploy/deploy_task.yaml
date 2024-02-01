@@ -30,4 +30,6 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
+          apt update
+          apt install -y git
           git clone https://github.com/bogg/subpipeline.git

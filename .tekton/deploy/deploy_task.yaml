@@ -39,10 +39,10 @@ spec:
           ls;
           sleep 5s;
           done
-sidecars:
-  - image: busybox
-    name: hello-sidecar
-    script: |
-            echo 'Hello from sidecar!';
-            sleep 3s;
-            echo "Done!";
+  sidecars:
+    - image: busybox
+      name: hello-sidecar
+      script: |
+              echo 'Hello from sidecar!';
+              sleep 3s;
+              echo "Done!";

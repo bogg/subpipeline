@@ -30,12 +30,12 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          sleep 2s;
+          sleep 1m;
           echo "Small Pause!";
-          sleep 3s;
+          sleep 2m;
           echo "Done!";
           for i in {1..2} ; do
           echo "Round $i";
           ls;
-          sleep 5s;
+          sleep 5m;
           done

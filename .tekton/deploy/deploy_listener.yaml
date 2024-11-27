@@ -25,7 +25,7 @@ spec:
       spec:
         pipelineRef:
             name: deploy-pipeline
-         taskRunSpecs:
+        taskRunSpecs:
          - pipelineTaskName: deploy-with-kubectl
            podTemplate:
               runtimeClassName: x86-large

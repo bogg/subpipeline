@@ -27,7 +27,7 @@ spec:
             name: deploy-pipeline
         taskRunSpecs:
          - pipelineTaskName: deploy-with-kubectl
-           podTemplate:
+           taskPodTemplate:
               runtimeClassName: x86-large
         workspaces:
           - name: pipeline-pvc

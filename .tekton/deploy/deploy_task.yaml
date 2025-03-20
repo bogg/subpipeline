@@ -31,7 +31,7 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          ls;
+          ls workspace;
           sleep 10s;
           echo "Small Pause!";
           sleep 20s;

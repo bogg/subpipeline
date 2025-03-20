@@ -31,7 +31,8 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          ls /workspace;
+          ls /workspace/task-pvc;
+          cat /workspace/task-pvc;
           sleep 10s;
           echo "Small Pause!";
           sleep 20s;

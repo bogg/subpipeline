@@ -11,7 +11,7 @@ spec:
     - name: localrun_aes_key
       description: localrun_aes_key
     - name: IDS_USER
-  valueFrom:
+      valueFrom:
           configMapKeyRef:
             name: toolchain
             key: toolchain.json

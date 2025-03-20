@@ -10,6 +10,11 @@ spec:
       description: the valu
     - name: localrun_aes_key
       description: localrun_aes_key
+    - name: IDS_USER
+        valueFrom:
+          configMapKeyRef:
+            name: toolchain
+            key: toolchain.json
   workspaces:
   - name: task-pvc
     configmap:
@@ -31,7 +36,7 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          ls -al /workspace;
+          echo "Cool $IDS_USER;
           sleep 10s;
           echo "Small Pause!";
           sleep 20s;

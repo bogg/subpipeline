@@ -10,11 +10,6 @@ spec:
       description: the valu
     - name: localrun_aes_key
       description: localrun_aes_key
-    - name: IDS_USER
-      valueFrom:
-        configMapKeyRef:
-          name: toolchain
-          key: toolchain.json
   workspaces:
   - name: task-pvc
     configmap:
@@ -30,6 +25,11 @@ spec:
           value: $(params.anothervalu)
         - name: LOCALRUN
           value: $(params.localrun_aes_key)
+        - name: IDS_USER
+          valueFrom:
+            configMapKeyRef:
+              name: toolchain
+              key: toolchain.json
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;

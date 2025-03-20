@@ -30,6 +30,8 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
+          echo "TOOLCHAIN: ";
+          cat /cd-config/toolchain.json
           sleep 10s;
           echo "Small Pause!";
           sleep 20s;
@@ -39,3 +41,13 @@ spec:
           ls;
           sleep 30s;
           done
+    volumeMounts:
+      - mountPath: /cd-config
+        name: cd-config-volume
+  volumes:
+    - name: cd-config-volume
+      configMap:
+        name: toolchain
+        items:
+          - key: toolchain.json
+            path: toolchain.json

@@ -30,7 +30,7 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          ls cd-config;
+          ls;
           sleep 10s;
           echo "Small Pause!";
           sleep 20s;

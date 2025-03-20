@@ -41,7 +41,7 @@ spec:
           sleep 30s;
           done
   volumeMounts:
-      - mountPath: /cd-config
+      - mountPath: cd-config
         name: cd-config-volume
   volumes:
     - name: cd-config-volume

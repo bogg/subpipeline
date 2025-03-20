@@ -12,9 +12,9 @@ spec:
       description: localrun_aes_key
     - name: IDS_USER
       valueFrom:
-          configMapKeyRef:
-            name: toolchain
-            key: toolchain.json
+        configMapKeyRef:
+          name: toolchain
+          key: toolchain.json
   workspaces:
   - name: task-pvc
     configmap:

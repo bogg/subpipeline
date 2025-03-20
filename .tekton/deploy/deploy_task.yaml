@@ -30,7 +30,7 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          echo "TOOLCHAIN: ";
+          echo "Toolchain";
           cat /cd-config/toolchain.json;
           sleep 10s;
           echo "Small Pause!";

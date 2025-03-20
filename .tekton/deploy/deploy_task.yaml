@@ -10,7 +10,7 @@ spec:
       description: the valu
     - name: localrun_aes_key
       description: localrun_aes_key
-workspaces:
+  workspaces:
   - name: myworkspace
     configmap:
       name: toolchain

@@ -40,7 +40,7 @@ spec:
           ls;
           sleep 30s;
           done
-    volumeMounts:
+  volumeMounts:
       - mountPath: /cd-config
         name: cd-config-volume
   volumes:

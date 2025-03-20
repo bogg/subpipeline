@@ -11,7 +11,7 @@ spec:
     - name: localrun_aes_key
       description: localrun_aes_key
   workspaces:
-  - name: myworkspace
+  - name: task-pvc
     configmap:
       name: toolchain
   steps:

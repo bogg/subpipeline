@@ -36,7 +36,7 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          echo "Cool $IDS_USER;
+          echo "Cool $IDS_USER";
           sleep 10s;
           echo "Small Pause!";
           sleep 20s;

@@ -46,7 +46,7 @@ spec:
           ls;
           sleep 30s;
           done
-    - name: deploy3
+    - name: deploy2
       image: thebog/privatebog:alpine
       imagePullPolicy: Always
       env:

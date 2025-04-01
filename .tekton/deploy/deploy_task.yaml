@@ -46,5 +46,67 @@ spec:
           ls;
           sleep 30s;
           done
+    - name: deploy3
+      image: thebog/privatebog:alpine
+      imagePullPolicy: Always
+      env:
+        - name: CLUSTER
+          value: $(params.cluster)
+        - name: ANOTHERV
+          value: $(params.anothervalu)
+        - name: LOCALRUN
+          value: $(params.localrun_aes_key)
+        - name: IDS_USER
+          valueFrom:
+            configMapKeyRef:
+              name: toolchain
+              key: toolchain.json
+      command: ["/bin/bash", "-c"]
+      args:
+        - set -e -o pipefail;
+          echo "Hey $LOCALRUN 2"
+          echo "Deploying to $CLUSTER";
+          echo "Oh and $ANOTHERV";
+          echo "Cool $IDS_USER";
+          sleep 10s;
+          echo "Small Pause!";
+          sleep 20s;
+          echo "Done!";
+          for i in {1..3} ; do
+          echo "Round $i";
+          ls;
+          sleep 30s;
+          done
+    - name: deploy3
+      image: thebog/privatebog:alpine
+      imagePullPolicy: Always
+      env:
+        - name: CLUSTER
+          value: $(params.cluster)
+        - name: ANOTHERV
+          value: $(params.anothervalu)
+        - name: LOCALRUN
+          value: $(params.localrun_aes_key)
+        - name: IDS_USER
+          valueFrom:
+            configMapKeyRef:
+              name: toolchain
+              key: toolchain.json
+      command: ["/bin/bash", "-c"]
+      args:
+        - set -e -o pipefail;
+          echo "Hey $LOCALRUN 3"
+          echo "Deploying to $CLUSTER";
+          echo "Oh and $ANOTHERV";
+          echo "Cool $IDS_USER";
+          sleep 10s;
+          echo "Small Pause!";
+          sleep 20s;
+          echo "Done!";
+          for i in {1..3} ; do
+          echo "Round $i";
+          ls;
+          sleep 30s;
+          done
           
 

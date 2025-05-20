@@ -31,7 +31,7 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
       
-          echo "DEBUG | "ibm_toolchain_pipeline_devsecops_core_git_clone_time_summary":{"ibm_toolchain_pipeline_devsecops_time":"test"}";
+          echo "::DEBUG::"ibm_toolchain_pipeline_devsecops_core_git_clone_time_summary":{"ibm_toolchain_pipeline_devsecops_time":"test"}";
           echo "DEBUG | "ibm_toolchain_pipeline_devsecops_core_change_request_process_time_summary": { "ibm_toolchain_pipeline_devsecops_time": "165961", "value": "7"}";
           echo "ibm_toolchain_pipeline_devsecops_core_pipeline_evaluation_time_summary": "{ "ibm_toolchain_pipeline_devsecops_time": "165961", "ibm_toolchain_pipeline_devsecops_pipeline_type" : "pr", "value": "7"}"; 
           echo "ibm_toolchain_pipeline_devsecops_pipeline_info": "{ "ibm_toolchain_pipeline_devsecops_branch": "fix/v10-master-image-update", "ibm_toolchain_pipeline_devsecops_pipeline_type": "ci", "value": "1"}";
@@ -47,12 +47,11 @@ spec:
           echo "ibm_toolchain_pipeline_devsecops_cli_cos_api_call_count": "{"value": "1"}";
           
           echo "Oh and $ANOTHERV";
-          sleep 10s;
           echo "Small Pause!";
-          sleep 20s;
+          sleep 5s;
           echo "Done!";
           for i in {1..3} ; do
           echo "Round $i";
           ls;
-          sleep 30s;
+          sleep 5s;
           done

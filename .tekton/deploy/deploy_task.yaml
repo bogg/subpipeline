@@ -30,6 +30,9 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
+          echo "Mask some secrets!";
+          echo "::add-mask::This should not be seen!";
+          echo "Should this midline masking work?::add-mask::This should not be seen!";      
           sleep 5s;
           echo "Small Pause!";
           echo "Done!";

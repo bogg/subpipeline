@@ -41,3 +41,7 @@ spec:
           ls;
           sleep 2s;
           done
+          echo "masking…"
+          echo "this is a secret value in a log line"
+          echo "::add-mask::a secret value"
+          echo "this is a secret value in a log line"

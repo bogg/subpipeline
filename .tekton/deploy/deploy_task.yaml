@@ -27,7 +27,7 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
-          echo "Hey $LOCALRUN"
+          echo "Hey $LOCALRUN";
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
           echo "Mask some secrets!";
@@ -40,7 +40,7 @@ spec:
           echo "Round $i";
           ls;
           sleep 2s;
-          done
+          done;
           echo "masking…";
           echo "this is a secret value in a log line";
           echo "::add-mask::a secret value";

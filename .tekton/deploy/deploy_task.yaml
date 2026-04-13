@@ -15,7 +15,7 @@ spec:
     mountPath: /artifacts
   steps:
     - name: deploy
-      image: thebog/privatebog:alpine
+      image: alpine/curl:8.17.0
       imagePullPolicy: Always
       env:
         - name: CLUSTER

@@ -30,6 +30,7 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
+          curl -v https://private.fr2.icr.io;
           sleep 60s;
           echo "Small Pause!";
           sleep 120s;

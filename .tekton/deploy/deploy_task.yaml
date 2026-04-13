@@ -30,7 +30,6 @@ spec:
           echo "Hey $LOCALRUN"
           echo "Deploying to $CLUSTER";
           echo "Oh and $ANOTHERV";
-          apk add curl;
           curl -v https://private.fr2.icr.io;
           sleep 60s;
           echo "Small Pause!";
